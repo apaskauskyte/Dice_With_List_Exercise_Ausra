@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#232F34"
     tools:context=".MainActivity">
 
     <TextView
@@ -14,11 +15,14 @@
         android:layout_marginBottom="400dp"
         android:gravity="center"
         android:text="1"
+        android:textColor="#F9AA33"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.172" />
 
     <TextView
         android:id="@+id/secondDice"
@@ -28,11 +32,14 @@
         android:layout_marginBottom="400dp"
         android:gravity="center"
         android:text="2"
+        android:textColor="#F9AA33"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.172" />
 
     <TextView
         android:id="@+id/thirdDice"
@@ -42,11 +49,14 @@
         android:layout_marginBottom="400dp"
         android:gravity="center"
         android:text="3"
+        android:textColor="#F9AA33"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstDice" />
+        app:layout_constraintTop_toBottomOf="@+id/firstDice"
+        app:layout_constraintVertical_bias="0.145" />
 
     <TextView
         android:id="@+id/fourthDice"
@@ -56,11 +66,14 @@
         android:layout_marginBottom="400dp"
         android:gravity="center"
         android:text="4"
+        android:textColor="#F9AA33"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/secondDice" />
+        app:layout_constraintTop_toBottomOf="@+id/secondDice"
+        app:layout_constraintVertical_bias="0.145" />
 
     <TextView
         android:id="@+id/fifthDice"
@@ -70,64 +83,93 @@
         android:layout_marginBottom="288dp"
         android:gravity="center"
         android:text="5"
+        android:textColor="#F9AA33"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/thirdDice" />
+        app:layout_constraintTop_toBottomOf="@+id/thirdDice"
+        app:layout_constraintVertical_bias="0.154" />
+
 
     <TextView
         android:id="@+id/sixthDice"
         android:layout_width="84dp"
         android:layout_height="82dp"
         android:layout_marginStart="142dp"
-        android:layout_marginBottom="288dp"
+        android:layout_marginBottom="400dp"
         android:gravity="center"
         android:text="6"
+        android:textColor="#F9AA33"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fourthDice" />
+        app:layout_constraintTop_toBottomOf="@+id/fourthDice"
+        app:layout_constraintVertical_bias="0.875" />
+
+    <TextView
+        android:id="@+id/sumOfDice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="142dp"
+        android:layout_marginBottom="224dp"
+        android:gravity="center"
+        android:text="SUM"
+        android:textColor="#F9AA33"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.167"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
 
     <Button
         android:id="@+id/rollDiceButton"
         android:layout_width="122dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="224dp"
+        android:layout_marginBottom="156dp"
         android:backgroundTint="#4A6572"
         android:backgroundTintMode="screen"
         android:text="Roll Dice"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/moreDiceButton"
         android:layout_width="122dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="160dp"
+        android:layout_marginBottom="92dp"
         android:backgroundTint="#4A6572"
         android:backgroundTintMode="screen"
         android:text="More Dice"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rollDiceButton"/>
 
     <Button
         android:id="@+id/lessDiceButton"
         android:layout_width="122dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="96dp"
+        android:layout_marginBottom="28dp"
         android:backgroundTint="#4A6572"
         android:backgroundTintMode="screen"
         android:text="Less Dice"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/moreDiceButton"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
