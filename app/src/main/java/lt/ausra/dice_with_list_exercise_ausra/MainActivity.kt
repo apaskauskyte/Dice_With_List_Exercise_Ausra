@@ -42,8 +42,8 @@ class MainActivity : AppCompatActivity() {
         moreDiceButton = findViewById(R.id.moreDiceButton)
         lessDiceButton = findViewById(R.id.lessDiceButton)
 
-        seventhDice.visibility = View.GONE
-        eightDice.visibility = View.GONE
+        seventhDice.visibility = View.INVISIBLE
+        eightDice.visibility = View.INVISIBLE
 
         rollDiceButton.setOnClickListener {
             rollDice()
@@ -51,6 +51,10 @@ class MainActivity : AppCompatActivity() {
 
         moreDiceButton.setOnClickListener {
             moreDice()
+        }
+
+        lessDiceButton.setOnClickListener {
+            lessDice()
         }
     }
 
@@ -60,9 +64,16 @@ class MainActivity : AppCompatActivity() {
         var diceSum = 0
         val diceHighestValue = 6
         val diceTextViews = arrayOf(
-            firstDice, secondDice, thirdDice, fourthDice, fifthDice, sixthDice, seventhDice, eightDice
+            firstDice,
+            secondDice,
+            thirdDice,
+            fourthDice,
+            fifthDice,
+            sixthDice,
+            seventhDice,
+            eightDice
         )
-        for (i in 1 .. diceTextViews.size) {
+        for (i in 1..diceTextViews.size) {
             val diceRoll = (1..diceHighestValue).random()
             diceValues.add(diceRoll)
             diceTextViews[i - 1].text = diceValues[i - 1].toString()
@@ -72,12 +83,71 @@ class MainActivity : AppCompatActivity() {
         }
         sumOfDice.text = diceSum.toString()
     }
+
     private fun moreDice() {
-        if (!seventhDice.isShown) {
-            seventhDice.visibility = View.VISIBLE
-        } else {
-            eightDice.visibility = View.VISIBLE
+
+        val diceTextViews = arrayOf(
+            firstDice,
+            secondDice,
+            thirdDice,
+            fourthDice,
+            fifthDice,
+            sixthDice,
+            seventhDice,
+            eightDice
+        )
+
+        for (i in diceTextViews.indices) {
+            if (!diceTextViews[i].isShown) {
+                diceTextViews[i].visibility = View.VISIBLE
+                break
+            } else if (diceTextViews[i].isShown && !diceTextViews[i + 1].isShown) {
+                diceTextViews[i + 1].visibility = View.VISIBLE
+                break
+            }
         }
+
+        lessDiceButton.isEnabled = true
+
+        if (diceTextViews.last().isShown) {
+            moreDiceButton.isEnabled = false
+        }
+
+        sumOfDice.text = "SUM"
+
+    }
+
+    private fun lessDice() {
+
+        val diceTextViews = arrayOf(
+            firstDice,
+            secondDice,
+            thirdDice,
+            fourthDice,
+            fifthDice,
+            sixthDice,
+            seventhDice,
+            eightDice
+        )
+
+        for (i in (diceTextViews.size - 1) downTo 0) {
+            if (diceTextViews[i].isShown) {
+                diceTextViews[i].visibility = View.GONE
+                break
+            } else if (!diceTextViews[i].isShown && diceTextViews[i - 1].isShown) {
+                diceTextViews[i - 1].visibility = View.GONE
+                break
+            }
+        }
+
+        moreDiceButton.isEnabled = true
+
+        if (!diceTextViews.first().isShown) {
+            lessDiceButton.isEnabled = false
+        }
+
+        sumOfDice.text = "SUM"
+
     }
 }
 
